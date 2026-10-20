@@ -1,0 +1,11 @@
+{
+  "name": "Alex — Portfolio",
+  "short_name": "Portfolio",
+  "icons": [
+    {"src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml"}
+  ],
+  "theme_color": "#C98A52",
+  "background_color": "#F2DDB8",
+  "display": "standalone",
+  "start_url": "/"
+}

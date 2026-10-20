@@ -1,0 +1,10 @@
+# Alex — Frontend Developer
+
+> Frontend developer portfoliosu: React və TypeScript ilə hazırlanmış layihələr, bacarıqlar, iş təcrübəsi və əlaqə məlumatı.
+
+### Əsas səhifələr
+- [Layihələr](https://example.com/projects): hazırladığım layihələr, hər birinin problemi, rolum və nəticəsi
+- [Haqqımda](https://example.com/about): qısa bio və CV
+- [Bacarıqlar](https://example.com/skills): kateqoriyalara bölünmüş texnologiyalar
+- [Təcrübə](https://example.com/experience): iş təcrübəsi xronologiyası
+- [Əlaqə](https://example.com/contact): email və sosial şəbəkələr
