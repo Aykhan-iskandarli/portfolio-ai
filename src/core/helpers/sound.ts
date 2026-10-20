@@ -57,6 +57,36 @@ export const playCrtOn = () => {
     tone(ctx, 15000, 0, 0.6, 'sine', 0.01);
 };
 
+export const playJump = () => {
+    const ctx = getContext();
+    if (!ctx) return;
+    const oscillator = ctx.createOscillator();
+    const gain = ctx.createGain();
+    oscillator.type = 'square';
+    oscillator.frequency.setValueAtTime(260, ctx.currentTime);
+    oscillator.frequency.exponentialRampToValueAtTime(620, ctx.currentTime + 0.12);
+    gain.gain.setValueAtTime(0.05, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.14);
+    oscillator.connect(gain).connect(ctx.destination);
+    oscillator.start();
+    oscillator.stop(ctx.currentTime + 0.15);
+};
+
+export const playBlock = () => {
+    const ctx = getContext();
+    if (!ctx) return;
+    tone(ctx, 988, 0, 0.08, 'square', 0.05);
+    tone(ctx, 1319, 0.08, 0.25, 'square', 0.05);
+};
+
+export const playFlag = () => {
+    const ctx = getContext();
+    if (!ctx) return;
+    [523, 659, 784, 1047].forEach((frequency, index) => {
+        tone(ctx, frequency, index * 0.1, 0.18, 'square', 0.05);
+    });
+};
+
 export const playEject = () => {
     const ctx = getContext();
     if (!ctx) return;

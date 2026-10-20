@@ -6,6 +6,7 @@ export interface IState {
     lang: ILang;
     languages: ILanguages[];
     soundEnabled: boolean;
+    unlockedSkills: string[];
 }
 
 export interface ILanguages {

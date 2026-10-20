@@ -8,7 +8,7 @@ import {IState} from './store';
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ['soundEnabled'],
+    whitelist: ['soundEnabled', 'unlockedSkills'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

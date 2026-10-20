@@ -1,7 +1,9 @@
+import SkillModel from './skill.model';
+
 export default class SkillGroupModel {
     public key: string | null = null;
     public icon: string | null = null;
-    public items: string[] = [];
+    public items: SkillModel[] = [];
 
     constructor(item: any) {
         this._setKey(item);
@@ -18,6 +20,6 @@ export default class SkillGroupModel {
     }
 
     private _setItems({items}: any) {
-        this.items = items ?? [];
+        this.items = items?.map((i: any) => new SkillModel(i)) ?? [];
     }
 }

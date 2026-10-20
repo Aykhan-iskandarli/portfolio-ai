@@ -1,4 +1,4 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {createSlice, PayloadAction, UnknownAction} from '@reduxjs/toolkit';
 import {az} from 'assets/lang/az';
 import {en} from 'assets/lang/en';
 import {ru} from 'assets/lang/ru';
@@ -26,6 +26,7 @@ const initialState: IState = {
         {id: 3, key: 'ru', value: 'Ru'},
     ],
     soundEnabled: false,
+    unlockedSkills: [],
 };
 
 export const rootSlice = createSlice({
@@ -44,8 +45,24 @@ export const rootSlice = createSlice({
         setSoundEnabled: (state: IState, action: PayloadAction<boolean>) => {
             state.soundEnabled = action.payload;
         },
+        setUnlockedSkill: (state: IState, action: PayloadAction<string>) => {
+            if (!state.unlockedSkills.includes(action.payload)) {
+                state.unlockedSkills.push(action.payload);
+            }
+        },
+        setUnlockedSkills: (state: IState, action: PayloadAction<string[]>) => {
+            state.unlockedSkills = action.payload;
+        },
+    },
+    extraReducers: (builder) => {
+        builder.addCase('persist/REHYDRATE', (state: IState, action: UnknownAction) => {
+            const payload = (action as UnknownAction & {payload?: Partial<IState>}).payload;
+            if (payload) {
+                state.unlockedSkills = payload.unlockedSkills || [];
+            }
+        });
     },
 });
 
-export const {setLoader, setLocale, setSoundEnabled} = rootSlice.actions;
+export const {setLoader, setLocale, setSoundEnabled, setUnlockedSkill, setUnlockedSkills} = rootSlice.actions;
 export default rootSlice.reducer;

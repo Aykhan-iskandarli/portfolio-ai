@@ -1,4 +1,4 @@
-# Alex — Frontend Developer
+# Aykhan — Frontend Developer
 
 > Frontend developer portfoliosu: React və TypeScript ilə hazırlanmış layihələr, bacarıqlar, iş təcrübəsi və əlaqə məlumatı.
 

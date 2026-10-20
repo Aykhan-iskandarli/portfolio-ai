@@ -3,6 +3,7 @@ import colors from 'assets/styles/abstracts/color';
 import fonts from 'assets/styles/abstracts/fonts';
 import sizes from 'assets/styles/abstracts/sizes';
 import {rem} from 'assets/styles/abstracts/functions';
+import {transition} from 'assets/styles/abstracts/mixins';
 
 const styles = {
     timeline: {
@@ -24,11 +25,20 @@ const styles = {
     },
     entry: {
         position: 'relative',
+        padding: [rem(12), rem(16)],
+        margin: [rem(-12), rem(-16)],
+        borderRadius: rem(sizes.radiusSmall),
+        transition: transition('background-color', 0.3),
+    },
+    // Maşın hazırda bu işin lövhəsinin yanından keçir
+    active: {
+        backgroundColor: colors.screenSurface,
+        boxShadow: `inset ${rem(3)} 0 0 ${colors.cartridgeExperience}`,
     },
     dot: {
         position: 'absolute',
-        left: rem(-36),
-        top: rem(4),
+        left: rem(-20),
+        top: rem(16),
         width: rem(16),
         height: rem(16),
         backgroundColor: colors.cartridgeExperience,
